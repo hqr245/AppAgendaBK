@@ -79,7 +79,8 @@ public class PersonaController {
     @DeleteMapping("/PERSONA/{id}")
     public ResponseEntity<Object> delete(@PathVariable Long id){
         Map<String, Object> map = new HashMap<>();
-        try {Persona currentPersona = personaService.findById(id);
+        try {
+            Persona currentPersona = personaService.findById(id);
             personaService.delete(currentPersona);
             map.put("deleted", true);
             return new ResponseEntity<>(map, HttpStatus.OK);
